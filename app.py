@@ -13,7 +13,7 @@ load_dotenv()
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 # Initialize Groq LLM
-groq_llm = ChatGroq(temperature=0, model_name="mixtral-8x7b-32768")
+groq_llm = ChatGroq(temperature=0, model_name="gemma2-9b-it")
 
 # ================== Define Workflow State ==================
 class AgentState(TypedDict):
@@ -58,7 +58,7 @@ app = workflow.compile()
 
 # ================== Streamlit App Setup ==================
 st.set_page_config(page_title="Amazon Assistant", layout="wide")
-st.title("Amazon Customer Support Chatbot")
+st.title("Customer Support Chatbot")
 
 # Initialize session state to store chat history
 if "messages" not in st.session_state:
